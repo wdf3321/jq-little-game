@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plane Game</title>
+    <!-- style.css -->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- nes.css -->
+    <link href="./css/nes.min.css" rel="stylesheet" />
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- 倒數計時 -->
+			<div id="score">0</div>
+      <div class="countdown">
+        <span></span>
+      </div>
+
+      <!-- 遊戲盒子 -->
+      <div class="box">
+        <!-- 最高分 -->
+        <div class="highScore nes-text is-warning" draggable="false">
+          <p>The Highest Score</p>
+          <span>0</span>
+        </div>
+        
+        <!-- 飛機有效範圍 -->
+        <div class="planeArea"></div>
+        <!-- 控制面板 -->
+        <div class="controller" draggable="false">
+          <!-- 開始鈕 -->
+          <button type="button" class="nes-btn is-primary" id="startBtn">START</button>
+          <br />
+          <span>Mode:</span>
+          <label for="auto">
+            <input type="radio" name="mode" class="nes-radio is-dark" id="auto" checked /><span>AUTO</span>
+          </label>
+          <label for="click">
+            <input type="radio" name="mode" class="nes-radio is-dark" id="click" /><span>CLICK</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/airplaneGame.js"></script>
+  </body>
+</html>
