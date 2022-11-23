@@ -4,35 +4,31 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Plane Game</title>
-		<!-- style.css -->
+		<title>一隻穿雲箭-千軍萬馬來相見</title>
 		<link rel="stylesheet" href="./css/style.css" />
-		<!-- nes.css -->
-		<link href="./css/nes.min.css" rel="stylesheet" />
-		<!-- google font -->
-		<link
-			href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
-			rel="stylesheet"
-		/>
+		<!-- <link href="./css/nes.min.css" rel="stylesheet" /> -->
 	</head>
 	<body>
+		<audio id="audio" src="./Im so Happy (feat. 韓國瑜).mp3"></audio>
+		<span id="avatar">AVATAR</span>
+		<span id="score1">SCORE</span>
 		<div class="container">
+			<span id="score1"></span>
 			<div id="score">0</div>
 			<div class="countdown">
 				<span></span>
 			</div>
+			<div class="highScore nes-text is-warning" draggable="false">
+				<p>Highest Score</p>
+				<span>69</span>
+			</div>
 
-			<div id="choose">	<button type="button" class="nes-btn is-primary" id="chooseBtn">
-				選擇角色
-			</button></div>
+
 
 			<!-- 遊戲盒子 -->
 			<div class="box">
 				<!-- 最高分 -->
-				<div class="highScore nes-text is-warning" draggable="false">
-					<p>The Highest Score</p>
-					<span>0</span>
-				</div>
+				
 
 
 				<!-- 飛機有效範圍 -->
@@ -49,23 +45,23 @@
 						<input
 							type="radio"
 							name="mode"
-							class="nes-radio is-dark"
+							class="is-dark"
 							id="auto"
 							checked
-						/><span>AUTO</span>
+						/><span>AUTO-連發</span>
 					</label>
 					<label for="click">
 						<input
 							type="radio"
 							name="mode"
-							class="nes-radio is-dark"
+							class="is-dark"
 							id="click"
-						/><span>SINGLE</span>
+						/><span>SINGLE-單發</span>
 					</label>
 				</div>
 			</div>
 		</div>
-		<div class="block"></div>
+		<img src="./a.png" class="block">
 		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		<script src="./js/jquery-3.6.0.min.js"></script>
 		<script src="./js/airplaneGame.js"></script>

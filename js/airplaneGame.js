@@ -14,109 +14,104 @@ if (localStorage.getItem("highScore_plane")) {
 	$(".highScore").hide();
 }
 
-$("#chooseBtn").on("click", gameChoose);
+
 
 $("#startBtn").on("click", gameStart);
-async function gameChoose() {
+
+
+
+
+async function gameStart() {
+	
+		$('#audio')[0].play();
+	function trigger() {
+		$(
+			`<div class="bullet" style="left: ${mouseX - 15}px; top: ${
+				mouseY - 80
+			}px"></div>`
+		)
+			.appendTo(".box")
+			.animate(
+				{
+					top: "-=1000px",
+				},
+				1500,
+				"linear"
+			);
+		
+	}
+	function rand(num) {
+		return Math.round(Math.random() * num);
+	}
+	function moveBlock(id) {
+		$(`#block${id}`).animate(
+			{
+				left: rand($(".box").width() - 50) + "px",
+				top: rand(300) + "px",
+			},
+			3000,
+			function () {
+				moveBlock(id);
+			}
+		);
+	}
 	const inputOptions = new Promise((resolve) => {
 		setTimeout(() => {
 			resolve({
-				"url(../a.png)": "Red",
-				"url(../b.png)": "Green",
+				"./a.png": "Ko",
+				"./b.png": "Han",
+				"./c.png": "Chen"
 			});
-		}, 1000);
+		}, 4500);
 	});
-
+	
 	const { value: color } = await Swal.fire({
-		title: "Select color",
+		title: "Select Avatar",
+
 		input: "radio",
 		inputOptions: inputOptions,
 		inputValidator: (value) => {
 			if (!value) {
 				return "You need to choose something!";
+			}else{
+				// console.log(value)
+				// $(".block").attr('src',`${color}`)
 			}
 		},
 	});
 	if (color) {
-		console.log(color);
+		$(".block").attr('src',`${color}`)
 		Swal.fire({ html: `GOOD LUCK` });
 	}
-	$(".block").css('background-image',`${color}`);
-
-	return color
-}
-
-// block移動動畫
-function moveBlock(id) {
-	$(`#block${id}`).animate(
-		{
-			left: rand($(".box").width() - 50) + "px",
-			top: rand(300) + "px",
-		},
-		3000,
-		function () {
-			moveBlock(id);
-		}
-	);
-}
-
-// 取隨機數
-function rand(num) {
-	return Math.round(Math.random() * num);
-}
-//
-
-// 子彈發射函數
-function trigger() {
-	$(
-		`<div class="bullet" style="left: ${mouseX - 15}px; top: ${
-			mouseY - 80
-		}px"></div>`
-	)
-		.appendTo(".box")
-		.animate(
-			{
-				top: "-=1000px",
-			},
-			1500,
-			"linear"
-		);
-}
-
-// 遊戲開始
-async function gameStart() {
-	$(".controller").hide();
-	$(".highScore").hide();
-	$(".planeArea").addClass("boundary");
-
-	await gameChoose();
-
-	// reset
-	clock = 0;
-	score = 0;
-	$("#score").text(score);
-
 	let blockId = 0;
-
-	// block產生
 	const blockTimer = setInterval(function () {
-		if ($(".block").length < 10) {
+		if ($(".block").length < 15) {
 			for (let i = 0; i < rand(5); i++) {
-				$(
-					`<div class='block' id="block${blockId}" style="left: ${rand(
+				$(`<img class='block' id="block${blockId}" style="left: ${rand(
 						$(".box").width() - 50
-					)}px; top: ${rand(250)}px"></div>`
+					)}px; top: ${rand(250)}px" src=${color}>`
 				).appendTo(".box");
 				moveBlock(blockId);
 				blockId++;
 			}
 		}
-	}, 600);
+	}, 100);
+	$(".controller").hide();
+	
+	$(".planeArea").addClass("boundary");
+	
+
+	// reset
+	clock = 0;
+	score = 0;
+	
+	$("#score").text(score);
+	
 
 	// 滑鼠控制飛機砲彈
 	$(".planeArea").on("mousemove", function (e) {
 		mouseX = e.offsetX;
-		mouseY = e.offsetY + 355;
+		mouseY = e.offsetY + 400;
 	});
 
 	if ($("#auto").is(":checked")) {
@@ -150,10 +145,9 @@ async function gameStart() {
 						!_block.hasClass("boom")
 					) {
 						_block
-							.addClass("boom")
-							.css(
+							.addClass("boom").css(
 								"background",
-								"url('./images/boom.png') no-repeat center / cover"
+								"url('./boom.png') no-repeat center/80% "
 							)
 							.stop()
 							.animate(
@@ -181,15 +175,15 @@ async function gameStart() {
 		clock++;
 		$(".countdown span").css(
 			"right",
-			`${($(".countdown").width() * clock) / 200}px`
+			`${($(".countdown").width() * clock) / 300}px`
 		);
 
-		if (clock > 200) {
+
+		if (clock > 300) {
+			clearInterval(blockTimer)
 			clearInterval(timer);
 			clearInterval(deterTimer);
-			clearInterval(blockTimer);
 			clearInterval(fireTimer);
-
 			$(".planeArea").removeClass("boundary");
 			$(".planeArea").off();
 			$(".block").remove();
@@ -200,7 +194,9 @@ async function gameStart() {
 				highScore_plane = score;
 				$(".highScore span").text(highScore_plane);
 				localStorage.setItem("highScore_plane", highScore_plane);
+				$(".block").remove()
 			}
 		}
 	}, 100);
 }
+

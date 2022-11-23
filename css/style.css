@@ -1,8 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
-
 * {
 	margin: 0;
 	padding: 0;
+	font-family: "微軟正黑體";
 }
 
 body {
@@ -12,19 +11,31 @@ body {
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-	font-family: '微軟正黑體';
+	font-family: "微軟正黑體";
 }
 span:nth-child(1) {
 	position: absolute;
 	top: 20%;
 	left: -20%;
 }
+#score1 {
+	font-size: 3.5rem;
+	position: absolute;
+	top: 30%;
+	left: 0;
+}
+#avatar {
+	font-size: 3.5rem;
+	position: absolute;
+	top: 22%;
+	left: 0;
+}
 .container {
 	width: 800px;
 }
 
 .countdown {
-	width: 750px;
+	width: 737px;
 	height: 2rem;
 	background-color: #000;
 	border: 7px solid #000;
@@ -68,26 +79,23 @@ span:nth-child(1) {
 	text-align: center;
 	font-size: 6rem;
 	position: absolute;
-	left: 0;
+	left: 60%;
 	right: 0;
-	top: 4.5rem;
+	top: 15rem;
 	user-select: none;
+	color: yellow;
 }
 
 .highScore p {
 	font-size: 1.3rem;
 }
-#choose{
-position: absolute;
-top: 10%;
-left: 13%;
-}
+
 #score {
 	text-align: left;
 	color: rgb(0, 0, 0);
 	font-size: 4rem;
 	position: absolute;
-	left:15%;
+	left: 15%;
 	top: 30%;
 	z-index: 3;
 	user-select: none;
@@ -112,36 +120,24 @@ left: 13%;
 #startBtn {
 	margin-bottom: 1.25rem;
 	font-size: 1.5rem;
+	padding: 10px;
 }
 
 .block {
 	width: 80px;
 	height: 80px;
-	background: no-repeat center / cover;
-	background-image: url("../b.png") ;
 	opacity: 1;
 	position: absolute;
 	top: 200px;
-	left: 280px;
-	z-index: 20;
-}
-
-.block2{
-	width: 80px;
-	height: 80px;
-	background: no-repeat center / cover;
-	background-image: url("../a.png") ;
-	opacity: 1;
-	position: absolute;
-	top: 200px;
-	left: 280px;
-	z-index: 20;
+	left: 240px;
+	z-index: 10;
 }
 
 .bullet {
 	width: 30px;
 	height: 48px;
-	background: url("../images/bullet.png");
+	background: url("../bullet.png");
 	position: absolute;
 	z-index: 10;
 }
+
