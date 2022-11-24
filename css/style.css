@@ -112,12 +112,20 @@ span:nth-child(1) {
 	color: #fff;
 	user-select: none;
 }
+.title{
+position: absolute;
+top: 10%;
+left: 34%;
+font-size: 5rem;
+color:yellow;
 
+}
 .container label {
 	font-size: 1rem;
 }
 
 #startBtn {
+	margin-top: 20rem;
 	margin-bottom: 1.25rem;
 	font-size: 1.5rem;
 	padding: 10px;
@@ -129,7 +137,7 @@ span:nth-child(1) {
 	opacity: 1;
 	position: absolute;
 	top: 200px;
-	left: 240px;
+	left: 270px;
 	z-index: 10;
 }
 

@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>一隻穿雲箭-千軍萬馬來相見</title>
+		<title>一隻穿雲箭</title>
 		<link rel="stylesheet" href="./css/style.css" />
 		<!-- <link href="./css/nes.min.css" rel="stylesheet" /> -->
 	</head>
@@ -12,31 +12,26 @@
 		<audio id="audio" src="./Im so Happy (feat. 韓國瑜).mp3"></audio>
 		<span id="avatar">AVATAR</span>
 		<span id="score1">SCORE</span>
+		<div id="title"></div>
 		<div class="container">
 			<span id="score1"></span>
 			<div id="score">0</div>
 			<div class="countdown">
 				<span></span>
 			</div>
-			<div class="highScore nes-text is-warning" draggable="false">
+			<div class="highScore" draggable="false">
 				<p>Highest Score</p>
 				<span>69</span>
 			</div>
 
 
 
-			<!-- 遊戲盒子 -->
+		
 			<div class="box">
-				<!-- 最高分 -->
-				
-
-
-				<!-- 飛機有效範圍 -->
-				<div class="planeArea"></div>
-				<!-- 控制面板 -->
+      <div class="planeArea"></div>
+			<span class="title">大爆射!</span>
 				<div class="controller" draggable="false">
-					<!-- 開始鈕 -->
-					<button type="button" class="nes-btn is-primary" id="startBtn">
+					<button type="button" class="" id="startBtn">
 						START
 					</button>
 					<br />
@@ -45,7 +40,7 @@
 						<input
 							type="radio"
 							name="mode"
-							class="is-dark"
+							class=""
 							id="auto"
 							checked
 						/><span>AUTO-連發</span>
@@ -54,7 +49,7 @@
 						<input
 							type="radio"
 							name="mode"
-							class="is-dark"
+							class=""
 							id="click"
 						/><span>SINGLE-單發</span>
 					</label>
@@ -64,7 +59,7 @@
 		<img src="./a.png" class="block">
 		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 		<script src="./js/jquery-3.6.0.min.js"></script>
-		<script src="./js/airplaneGame.js"></script>
+		<script src="./js/Game.js"></script>
 	</body>
 </html>
 
