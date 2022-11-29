@@ -116,7 +116,7 @@ async function gameStart() {
 	$("#score").text(score);
 	
 
-	// 滑鼠控制飛機砲彈
+	
 	$(".planeArea").on("mousemove", function (e) {
 		mouseX = e.offsetX;
 		mouseY = e.offsetY + 400;
@@ -133,7 +133,7 @@ async function gameStart() {
 		$(".planeArea").on("click", trigger);
 	}
 
-	// 判斷子彈是否打到block
+
 	const deterTimer = setInterval(() => {
 		if ($(".bullet") && $(".block")) {
 			$(".bullet").each(function () {
