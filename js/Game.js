@@ -61,7 +61,7 @@ async function gameStart() {
 				"./a.png": "Ko",
 				"./b.png": "Han",
 				"./c.png": "Chen",
-				'./d.jpg': "Tsai",
+				'./d.png': "Tsai",
 			});
 		}, 4500);
 	});
