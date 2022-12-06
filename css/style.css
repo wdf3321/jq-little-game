@@ -112,13 +112,12 @@ span:nth-child(1) {
 	color: #fff;
 	user-select: none;
 }
-.title{
-position: absolute;
-top: 10%;
-left: 34%;
-font-size: 5rem;
-color:yellow;
-
+.title {
+	position: absolute;
+	top: 10%;
+	left: 34%;
+	font-size: 5rem;
+	color: yellow;
 }
 .container label {
 	font-size: 1rem;
@@ -142,10 +141,10 @@ color:yellow;
 }
 
 .bullet {
-	width: 30px;
-	height: 48px;
-	background: url("../bullet.png");
+	width: 64px;
+	height: 64px;
+	transform: rotate(-45deg);
+	background: url("../icons8-ammo-64.png");
 	position: absolute;
 	z-index: 10;
 }
-
