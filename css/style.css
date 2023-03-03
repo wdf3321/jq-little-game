@@ -25,7 +25,7 @@ span:nth-child(1) {
 	left: 0;
 }
 #avatar {
-	font-size: 3.5rem;
+	font-size: 3rem;
 	position: absolute;
 	top: 22%;
 	left: 0;
@@ -93,7 +93,7 @@ span:nth-child(1) {
 #score {
 	text-align: left;
 	color: rgb(0, 0, 0);
-	font-size: 4rem;
+	font-size: 3rem;
 	position: absolute;
 	left: 15%;
 	top: 30%;
@@ -135,8 +135,8 @@ span:nth-child(1) {
 	height: 80px;
 	opacity: 1;
 	position: absolute;
-	top: 200px;
-	left: 270px;
+	top: 20%;
+	left:13%;
 	z-index: 10;
 }
 
